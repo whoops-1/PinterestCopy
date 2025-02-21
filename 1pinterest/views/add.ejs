@@ -1,0 +1,62 @@
+<%include ../partials/header%>
+  <div class="w-full h-screen bg-zinc-800">
+  
+    <div class="container mx-auto p-4">
+    <h1 class="text-2xl font-bold mb-6 text-center text-white">Create a New Pin</h1>
+    <form class="max-w-lg mx-auto bg-zinc-700 p-6 rounded-lg shadow-lg" action="/createpost" method="post" enctype="multipart/form-data">
+      <div class="mb-6">
+        <label class="block text-gray-300 text-sm font-bold mb-2" for="image">
+          Upload Image
+        </label>
+        <div class="relative border-2 border-dashed border-gray-500 rounded-lg p-6 text-center hover:border-gray-400 transition-colors">
+          <input
+            type="file"
+            id="image"
+            name="postimage"
+            accept="image/*"
+            class="absolute inset-0 w-full h-full opacity-0 cursor-pointer"
+          />
+          <svg class="w-12 h-12 mx-auto text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-8l-4-4m0 0L8 8m4-4v12"></path>
+          </svg>
+          <p class="text-gray-400 mt-2">Drag and drop or click to upload</p>
+        </div>
+      </div>
+      <div class="mb-6">
+        <label class="block text-gray-300 text-sm font-bold mb-2" for="title">
+          Title
+        </label>
+        <input
+          type="text"
+          id="title"
+          name="title"
+          placeholder="Add a title"
+          class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-pink-500 focus:border-transparent bg-zinc-600 text-white"
+        />
+      </div>
+      <div class="mb-6">
+        <label class="block text-gray-300 text-sm font-bold mb-2" for="description">
+          Description
+        </label>
+        <textarea
+          id="description"
+          name="description"
+          rows="4"
+          placeholder="Tell everyone what your Pin is about"
+          class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-pink-500 focus:border-transparent bg-zinc-600 text-white"
+        ></textarea>
+      </div>
+      <div class="flex justify-end">
+        <button
+          type="submit"
+          class="bg-pink-500 text-white px-6 py-2 rounded-lg hover:bg-pink-600 focus:outline-none focus:ring-2 focus:ring-pink-500 focus:ring-offset-2 transition-colors"
+        >
+          Create Pin
+        </button>
+      </div>
+    </form>
+  </div>
+
+</div>
+
+<%include ../partials/footer%>

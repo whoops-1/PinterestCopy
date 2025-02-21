@@ -1,0 +1,22 @@
+<% include ../partials/header %>
+<div class="w-full min-h-screen bg-zinc-800 p-4">
+  <h1 class="font-semibold w-full text-center text-white text-7xl">YOUR POSTS</h1>
+  <hr>
+  <div class="flex mt-5 flex-wrap gap-4">
+    <% user.posts.forEach(function(elem) { %>
+      <div class="card w-78 h-64 relative">
+        <div class="flex justify-center w-full h-48 bg-zinc-300 rounded-md overflow-hidden">
+          <img class="h-full object-cover" src="/images/uploads/<%= elem.postImage %>" alt="<%= elem.title %>" />
+        </div>
+        <h5 class="text-white mt-2 text-sm font-semibold"><%= elem.title %></h5>
+        <!-- Delete Button -->
+        <form action="/delete/post/<%= elem._id %>" method="POST" class="absolute top-2 right-2">
+          <button type="submit" class="bg-red-500 text-white px-2 py-1 rounded-md hover:bg-red-600 transition-colors">
+            <i class="ri-delete-bin-2-line"></i>
+          </button>
+        </form>
+      </div>
+    <% }) %>
+  </div>
+</div>
+<% include ../partials/footer %>
