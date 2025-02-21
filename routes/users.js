@@ -4,7 +4,7 @@ const plm = require("passport-local-mongoose")
 
  
 const { Schema } = mongoose;
-mongoose.connect(process.env.MONGO_URI).then(() =>{console.log('connected to Mongodb')})
+mongoose.connect('mongodb+srv://pritamkumar:pk456245@hotel.j8uyb.mongodb.net/?retryWrites=true&w=majority&appName=Hotel').then(() =>{console.log('connected to Mongodb')})
 // Define the User schema
 const userSchema = new Schema({
   username: {
